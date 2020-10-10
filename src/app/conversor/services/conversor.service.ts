@@ -1,18 +1,18 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import {
     Conversao,
     ConversaoResponse
-} from "../models";
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+} from '../models';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ConversorService {
 
-    private readonly BASE_URL = "http://data.fixer.io/api/latest?access_key=3afbac738605675c99889620528ce7b3";
+    private readonly BASE_URL = 'http://data.fixer.io/api/latest?access_key=3afbac738605675c99889620528ce7b3';
 
     constructor(private http: HttpClient) {
     }
@@ -24,7 +24,7 @@ export class ConversorService {
      * @return Observable<ConversaoResponse>
      */
     converter(conversao: Conversao): Observable<any> {
-        let params = `&base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`;
+        const params = `&base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`;
 
         return this.http
             .get(this.BASE_URL + params);
@@ -63,7 +63,7 @@ export class ConversorService {
     /**
      * Retorna a data da cotação dado uma response.
      *
-     * @param conversaoResponse
+     * @param conversaoResponse ConversaoResponse
      * @return string
      */
     dataCotacao(conversaoResponse: ConversaoResponse): string {

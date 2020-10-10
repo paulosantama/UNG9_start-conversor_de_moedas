@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {Conversao, ConversaoResponse, Moeda} from "../models";
-import {ConversorService, MoedaService} from "../services";
-import {NgForm} from "@angular/forms";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Conversao, ConversaoResponse, Moeda } from '../models';
+import { ConversorService, MoedaService } from '../services';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'app-conversor',
@@ -31,8 +31,8 @@ export class ConversorComponent implements OnInit {
         return this._conversaoResponse;
     }
 
-    @ViewChild("conversaoForm", {static: true})
-    conversaoForm: NgForm
+    @ViewChild('conversaoForm', {static: true})
+    conversaoForm: NgForm;
 
     constructor(
         private moedaService: MoedaService,
@@ -56,7 +56,7 @@ export class ConversorComponent implements OnInit {
                 .subscribe(
                     response => this._conversaoResponse = response,
                     error => this._possuiErro = true
-                )
+                );
         }
     }
 }

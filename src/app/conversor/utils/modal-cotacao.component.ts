@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ConversorService} from "../services";
-import {Conversao, ConversaoResponse} from "../models";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ConversorService } from '../services';
+import { Conversao, ConversaoResponse } from '../models';
 
 @Component({
     selector: 'modal-cotacao',
@@ -33,14 +33,14 @@ export class ModalCotacaoComponent implements OnInit {
     }
 
     get cotacaoPara(): number {
-        return this.conversorService.cotacaoPara(this.conversaoResponse, this.conversao)
+        return this.conversorService.cotacaoPara(this.conversaoResponse, this.conversao);
     }
 
     get cotacaoDe(): string {
-        return this.conversorService.cotacaoDe(this.conversaoResponse, this.conversao)
+        return this.conversorService.cotacaoDe(this.conversaoResponse, this.conversao);
     }
 
     get dataCotacao(): string {
-        return this.conversorService.dataCotacao(this.conversaoResponse)
+        return this.conversorService.dataCotacao(this.conversaoResponse);
     }
 }

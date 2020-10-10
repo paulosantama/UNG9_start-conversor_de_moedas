@@ -1,1 +1,1 @@
-export * from './modal-cotacao.component'
+export * from './modal-cotacao.component';

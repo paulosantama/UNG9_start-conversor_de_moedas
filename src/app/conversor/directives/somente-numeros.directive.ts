@@ -1,5 +1,5 @@
-import {Directive, ElementRef, HostListener} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import { Directive, ElementRef, HostListener } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Directive({
     selector: '[somenteNumeros]',
@@ -20,16 +20,16 @@ export class SomenteNumerosDirective implements ControlValueAccessor {
     /**
      * Obtém o valor contido na model.
      *
-     * @param obj
+     * @param obj any
      */
     writeValue(obj: any): void {
-        this.el.nativeElement.value = obj
+        this.el.nativeElement.value = obj;
     }
 
     /**
      * Registra função a ser chamada para atualizar valor na model.
      *
-     * @param fn
+     * @param fn any
      */
     registerOnChange(fn: any): void {
         this.onChange = fn;
@@ -38,7 +38,7 @@ export class SomenteNumerosDirective implements ControlValueAccessor {
     /**
      * Registra função a ser chamada para atualizar valor na model para evento touched.
      *
-     * @param fn
+     * @param fn any
      */
     registerOnTouched(fn: any): void {
         this.onTouched = fn;
@@ -47,12 +47,12 @@ export class SomenteNumerosDirective implements ControlValueAccessor {
     /**
      * Implementa evento de keyup para o elemento da diretiva.
      *
-     * @param $event
+     * @param $event any
      */
     @HostListener('keyup', ['$event'])
     onKeyUp($event: any) {
         let valor = $event.target.value;
-        let posDecimais = valor.indexOf('.');
+        const posDecimais = valor.indexOf('.');
 
         valor = valor.replace(/[\D]/g, '');
 

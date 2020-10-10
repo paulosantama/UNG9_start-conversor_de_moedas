@@ -1,1 +1,1 @@
-export * from './data-br.pipe'
+export * from './data-br.pipe';
